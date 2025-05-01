@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>UKM Panahan - ITI</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+
+    </style>
+</head>
+<body>
+    <header>
+        <div class="header-container"></div>
+        <div class="container header-container">
+            <a href="#" class="logo">
+                <img src="logo_panahan.jpg" alt="Logo UKM Panahan">
+                <div class="logo-text">
+                    <h1>UKM Panahan</h1>
+                    <p>ITI</p>
+                </div>
+            </a>
+            
+            <button class="menu-toggle" aria-label="Toggle Menu">
+                <i class="fas fa-bars"></i>
+            </button>
+            
+            <nav class="nav-menu">
+                <ul>
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="berita.html">Berita</a></li>
+                    <li><a href="#kontak">Kontak</a></li>
+                </ul>
+            </nav>
+            
+            <div class="overlay"></div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>UKM Panahan ITI</h1>
+            <p>Wadah pengembangan bakat panahan mahasiswa dengan fasilitas lengkap dan pelatih profesional</p>
+            <a href="pendaftaran.html" class="btn"><span>Daftar Sekarang</span></a>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="about">
+        <div class="container">
+            <div class="section-title">
+                <h2>Tentang Kami</h2>
+            </div>
+            <div class="about-content">
+                <div class="about-img floating">
+                    <img src="logo_panahan.jpg" alt="Tim Panahan">
+                </div>
+                <div class="about-text">
+                    <h3>UKM Panahan ITI</h3>
+                    <p>UKM Panahan adalah unit kegiatan mahasiswa yang fokus pada pengembangan bakat dan minat mahasiswa dalam olahraga panahan. Kami menyediakan fasilitas dan pelatihan untuk semua tingkatan, dari pemula hingga mahir.</p>
+                    <p>Dengan pelatih profesional dan fasilitas lengkap, kami siap membantu Anda menguasai teknik panahan yang benar dan berprestasi di berbagai kompetisi.</p>
+                    <p>Bergabunglah dengan kami dan jadilah bagian dari komunitas panahan terbaik di kampus!</p>
+                    <a href="" class="btn" style="margin-top: 20px;"><span>Pelajari Lebih Lanjut</span></a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features">
+        <div class="container">
+            <div class="section-title">
+                <h2>Keunggulan Kami</h2>
+            </div>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <h3>Pelatih Profesional</h3>
+                    <p>Didukung oleh pelatih bersertifikat nasional dengan pengalaman melatih atlet berprestasi</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-bullseye"></i>
+                    </div>
+                    <h3>Fasilitas Lengkap</h3>
+                    <p>Lapangan panahan standar nasional dengan peralatan modern dan lengkap</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <i class="fas fa-users"></i>
+                    </div>
+                    <h3>Komunitas Solid</h3>
+                    <p>Komunitas aktif yang mendukung pengembangan minat dan bakat panahan</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang UKM Panahan</h3>
+                    <p>Unit Kegiatan Mahasiswa Panahan ITI merupakan wadah pengembangan minat dan bakat mahasiswa dalam olahraga panahan.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                        <li><a href="berita.html">Berita</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-envelope"></i> ukm.panahan@iti.ac.id</p>
+                    <p><i class="fas fa-phone"></i> (021) 1234-5678</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Gedung UKM, Kampus ITI, Jakarta</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 UKM Panahan ITI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const menuToggle = document.querySelector('.menu-toggle');
+            const navMenu = document.querySelector('.nav-menu');
+            const overlay = document.querySelector('.overlay');
+            let lastScrollY = window.scrollY;
+            let ticking = false;
+        
+            // Fungsi toggle menu
+            const toggleMenu = () => {
+                menuToggle.classList.toggle('active');
+                navMenu.classList.toggle('active');
+                overlay.classList.toggle('active');
+                document.body.classList.toggle('menu-open');
+            };
+        
+            // Fungsi close menu
+            const closeMenu = () => {
+                menuToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                overlay.classList.remove('active');
+                document.body.classList.remove('menu-open');
+            };
+        
+            // Toggle menu saat klik hamburger
+            menuToggle.addEventListener('click', toggleMenu);
+        
+            // Close menu saat klik overlay
+            overlay.addEventListener('click', closeMenu);
+        
+            // Close menu saat klik link
+            document.querySelectorAll('.nav-menu a').forEach(link => {
+                link.addEventListener('click', closeMenu);
+            });
+        
+            // Auto-close saat scroll
+            window.addEventListener('scroll', () => {
+                if (!navMenu.classList.contains('active')) return;
+                
+                lastScrollY = window.scrollY;
+                
+                if (!ticking) {
+                    window.requestAnimationFrame(() => {
+                        if (Math.abs(lastScrollY - window.scrollY) > 5) {
+                            closeMenu();
+                        }
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            });
+        });
+        </script>
+
+</script>
+</body>
+</html>

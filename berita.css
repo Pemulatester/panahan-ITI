@@ -1,0 +1,772 @@
+/* News Section Styles */
+
+        /* Modern Color Scheme with Orange Gradient */
+        :root {
+            --primary: #FF6B35; /* Vibrant orange */
+            --primary-dark: #E94E1B;
+            --primary-light: #FF8C42;
+            --secondary: #2A2D34; /* Dark blue-gray */
+            --accent: #F7C59F; /* Light peach */
+            --light: #F8F9FA;
+            --dark: #212529;
+            --gradient-orange: linear-gradient(135deg, var(--primary), var(--primary-dark));
+        }
+
+.news-preview, .news-section {
+    padding: 80px 0;
+    background-color: #f5f5f5;
+}
+
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+.news-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.news-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.15);
+}
+
+.news-img {
+    position: relative;
+    height: 200px;
+    overflow: hidden;
+}
+
+.news-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s;
+}
+
+.news-card:hover .news-img img {
+    transform: scale(1.1);
+}
+
+.news-category {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    background: var(--primary);
+    color: white;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: bold;
+}
+
+.news-content {
+    padding: 20px;
+}
+
+.news-content h3 {
+    margin-bottom: 10px;
+    color: var(--secondary);
+    font-size: 1.3rem;
+}
+
+.news-date {
+    color: #777;
+    font-size: 0.9rem;
+    margin-bottom: 15px;
+    display: block;
+}
+
+.read-more {
+    display: inline-block;
+    color: var(--primary);
+    font-weight: 600;
+    text-decoration: none;
+    margin-top: 15px;
+    transition: color 0.3s;
+}
+
+.read-more:hover {
+    color: var(--accent);
+    text-decoration: underline;
+}
+
+.news-filter {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.filter-btn {
+    padding: 8px 20px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.filter-btn.active, .filter-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.pagination {
+    display: flex;
+    justify-content: center;
+    margin-top: 40px;
+    gap: 5px;
+}
+
+.page-btn {
+    display: inline-block;
+    padding: 8px 15px;
+    background: white;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-decoration: none;
+    color: var(--secondary);
+    transition: all 0.3s;
+}
+
+.page-btn.active, .page-btn:hover {
+    background: var(--primary);
+    color: white;
+    border-color: var(--primary);
+}
+
+.text-center {
+    text-align: center;
+    margin-top: 40px;
+}
+
+/* Resetting default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body and background setup */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+/* Header Styling */
+header {
+    background-color: #ffffff; /* White background for header */
+    padding: 20px 0;
+    border-bottom: 2px solid #ddd;
+}
+
+.header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    width: 50px; /* Resize logo */
+    margin-right: 10px;
+}
+
+.logo-text h1 {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff6f00; /* Orange for "UKM Panahan" */
+    margin-bottom: 5px;
+}
+
+.logo-text p {
+    font-size: 14px;
+    color: #000; /* ITI text in black */
+}
+
+nav ul {
+    display: flex;
+    list-style-type: none;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    color: #000; /* All menu text in black */
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #ff6f00; /* Highlight on hover and active state with orange */
+}
+
+nav ul li a:focus {
+    outline: none;
+}
+
+
+/* Tombol Toggle (Hamburger) */
+.menu-toggle {
+    position: absolute;
+    top: 25px;
+    right: 35px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1000;
+}
+
+/* ===== MENU TOGGLE BUTTON ===== */
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    z-index: 1001;
+  }
+  
+  .menu-toggle i {
+    font-size: 1.8rem;
+    color: var(--primary);
+    transition: var(--transition);
+  }
+  
+  /* ===== NAVIGATION MENU ===== */
+  #menu-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    transition: all 0.3s ease;
+  }
+  
+  #menu-list li {
+    margin-left: 20px;
+  }
+  
+  #menu-list li a {
+    color: var(--dark);
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 1.1rem;
+    padding: 8px 15px;
+    border-radius: 4px;
+    transition: all 0.3s;
+  }
+  
+  #menu-list li a:hover,
+  #menu-list li a.active {
+    color: var(--primary);
+    background-color: rgba(255, 107, 53, 0.1);
+  }
+  
+  /* ===== OVERLAY STYLES ===== */
+  .overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+  }
+  
+  .overlay.active {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  /* ===== MOBILE STYLES ===== */
+  @media (max-width: 768px) {
+    .menu-toggle {
+      display: block;
+    }
+    
+    #menu-list {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: 280px;
+      height: 100vh;
+      background: white;
+      box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+      flex-direction: column;
+      padding: 80px 30px 30px;
+      z-index: 999;
+      transition: right 0.4s ease;
+    }
+    
+    #menu-list.show {
+      right: 0;
+    }
+    
+    #menu-list li {
+      margin: 15px 0;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: all 0.3s ease;
+    }
+    
+    #menu-list.show li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    /* Staggered animation for menu items */
+    #menu-list.show li:nth-child(1) { transition-delay: 0.1s; }
+    #menu-list.show li:nth-child(2) { transition-delay: 0.2s; }
+    #menu-list.show li:nth-child(3) { transition-delay: 0.3s; }
+    
+    #menu-list li a {
+      display: block;
+      padding: 12px 0;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .menu-open {
+      overflow: hidden;
+    }
+  }
+
+
+
+.news-form {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 600;
+    color: var(--secondary);
+}
+
+.form-control {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 1rem;
+}
+
+textarea.form-control {
+    min-height: 150px;
+    resize: vertical;
+}
+
+.form-actions {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+.btn-primary:hover {
+    background: #c0392b;
+}
+
+.btn-secondary {
+    background: white;
+    color: var(--secondary);
+    border: 1px solid #ddd;
+}
+
+.btn-secondary:hover {
+    background: #f5f5f5;
+}
+
+.news-list {
+    background: white;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+}
+
+.news-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.news-table th, .news-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid #eee;
+}
+
+.news-table th {
+    background: #f9f9f9;
+    color: var(--secondary);
+    font-weight: 600;
+}
+
+.news-table tr:hover {
+    background: #f5f5f5;
+}
+
+.news-table .actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    padding: 5px 10px;
+    border-radius: 3px;
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.edit-btn {
+    background: #3498db;
+    color: white;
+}
+
+.edit-btn:hover {
+    background: #2980b9;
+}
+
+.delete-btn {
+    background: #e74c3c;
+    color: white;
+}
+
+.delete-btn:hover {
+    background: #c0392b;
+}
+
+/* Login Page */
+.login-container {
+    max-width: 500px;
+    margin: 50px auto;
+    background: white;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+}
+
+.login-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: var(--secondary);
+}
+
+.login-logo {
+    text-align: center;
+    margin-bottom: 30px;
+}
+
+.login-logo img {
+    height: 80px;
+}
+
+ /* Footer - Modern Gradient Footer */
+ footer {
+    background: linear-gradient(135deg, var(--secondary), #1A1C22);
+    color: white;
+    padding: 70px 0 30px;
+    position: relative;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 10px;
+    background: var(--gradient-orange);
+}
+
+.footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 40px;
+    margin-bottom: 50px;
+}
+
+.footer-column h3 {
+    font-size: 1.3rem;
+    margin-bottom: 25px;
+    position: relative;
+    padding-bottom: 10px;
+}
+
+.footer-column h3::after {
+    content: '';
+    position: absolute;
+    width: 40px;
+    height: 3px;
+    background: var(--primary);
+    bottom: 0;
+    left: 0;
+    border-radius: 3px;
+}
+
+.footer-column p {
+    margin-bottom: 15px;
+    opacity: 0.8;
+}
+
+.footer-links {
+    list-style: none;
+}
+
+.footer-links li {
+    margin-bottom: 12px;
+}
+
+.footer-links a {
+    color: white;
+    text-decoration: none;
+    opacity: 0.8;
+    transition: all 0.3s;
+    display: inline-block;
+}
+
+.footer-links a:hover {
+    opacity: 1;
+    color: var(--primary);
+    transform: translateX(5px);
+}
+
+.social-icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.social-icons a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+    border-radius: 50%;
+    font-size: 1.2rem;
+    transition: all 0.3s;
+}
+
+.social-icons a:hover {
+    background: var(--primary);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    padding-top: 30px;
+    text-align: center;
+    font-size: 0.9rem;
+    opacity: 0.7;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes fadeInUp {
+    from {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translateY(-30px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* Responsive Design */
+@media (max-width: 992px) {
+    .hero h1 {
+        font-size: 2.8rem;
+    }
+    
+    .about-content {
+        flex-direction: column;
+    }
+    
+    .about-img {
+        margin-bottom: 30px;
+        width: 100%;
+    }
+}
+
+@media (max-width: 768px) {
+    footer {
+      padding: 50px 15px 20px;
+    }
+  
+    .footer-content {
+      grid-template-columns: 1fr;
+      gap: 30px;
+    }
+  
+    .footer-column h3 {
+      font-size: 1.1rem;
+      margin-bottom: 15px;
+    }
+  
+    .footer-column p {
+      font-size: 0.95rem;
+    }
+  
+    .footer-links a {
+      font-size: 0.95rem;
+    }
+  
+    .social-icons {
+      justify-content: center;
+    }
+  
+    .copyright {
+      font-size: 0.8rem;
+      padding: 20px 10px 0;
+    }
+  }
+  
+
+@media (max-width: 576px) {
+    .btn {
+        padding: 12px 25px;
+    }
+    
+    .hero h1 {
+        font-size: 2rem;
+    }
+    
+    .section-title h2 {
+        font-size: 1.8rem;
+    }
+    
+    .feature-card {
+        padding: 30px 20px;
+    }
+}
+
+/* Floating Elements Animation */
+.floating {
+    animation: floating 3s ease-in-out infinite;
+}
+
+@keyframes floating {
+    0% { transform: translateY(0px); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0px); }
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--primary);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--primary-dark);
+}
+
+.news-grid {
+    display: grid;
+    gap: 30px;
+    margin-bottom: 40px;
+}
+
+/* Desktop - 4 kolom */
+@media (min-width: 992px) {
+    .news-grid {
+        grid-template-columns: repeat(4, 1fr);
+    }
+}
+
+/* Tablet - 2 kolom */
+@media (min-width: 768px) and (max-width: 991px) {
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* Mobile - 1 kolom */
+@media (max-width: 767px) {
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+.news-filter {
+    margin-top: -50px; /* Sesuaikan nilai dengan yang diinginkan */
+}

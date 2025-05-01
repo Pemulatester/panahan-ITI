@@ -1,0 +1,390 @@
+/* Orange/White Theme - Fixed Mobile Menu */
+:root {
+    /* Orange Color Palette */
+    --primary-color: #FF6B35;
+    --primary-hover: #E94E1B;
+    --secondary-color: #FFA630;
+    --accent-color: #FFD166;
+    
+    /* Neutral Colors */
+    --background-light: #ffffff;
+    --background-dark: #f8f9fa;
+    --text-dark: #333333;
+    --text-muted: #666666;
+    --border-color: #e0e0e0;
+    
+    /* UI Variables */
+    --card-bg: var(--background-light);
+    --border-radius: 12px;
+    --box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    --transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, var(--primary-color), var(--primary-hover));
+}
+
+/* Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--background-light);
+    color: var(--text-dark);
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    flex: 1;
+    position: relative; /* Added for z-index control */
+    z-index: 1; /* Ensure content stays below mobile menu */
+}
+.header-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white; /* Sesuaikan dengan warna tema Anda */
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Efek bayangan opsional */
+    padding: 20px 0; /* Tambah padding vertikal untuk memperbesar tinggi */
+}
+
+/* Menambah padding ke main container untuk mengkompensasi header fixed */
+.container {
+    padding-top: 120px; /* Sesuaikan dengan tinggi header Anda */
+}
+
+/* Logo Styles */
+.logo-wrapper {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    text-decoration: none;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 3px solid var(--primary-color);
+    transition: var(--transition);
+}
+
+.logo:hover {
+    transform: rotate(15deg);
+}
+
+.site-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    background: var(--gradient-primary);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.menu-toggle {
+    position: absolute; /* Ubah ke absolute untuk kontrol lebih baik di dalam header */
+    top: 30px;
+    right: 20px;   /* Jarak dari kanan */
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 30px;
+    height: 21px;
+    background: transparent;
+    border: none;
+    cursor: pointer;
+    padding: 0;
+    z-index: 1010; /* Pastikan berada di atas header dan elemen lain */
+}
+
+.menu-toggle i {
+    font-size: 1.8rem;
+    color: var(--primary-color);
+    transition: var(--transition);
+}
+
+.menu-toggle.active i {
+    color: var(--primary-hover);
+    transform: rotate(90deg);
+}
+
+/* Navigation Menu */
+
+    /* Add this to your existing CSS */
+    .nav-menu {
+        /* Keep existing styles */
+        transition: transform 0.3s ease; /* Add opacity transition */
+    }
+    
+    .nav-menu.scrolling {
+        transform: translateX(100%); /* Hide menu when scrolling */
+        opacity: 0;
+        pointer-events: none; /* Disable interactions */
+    }
+    
+
+
+.nav-menu ul {
+    display: flex;
+    list-style: none;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.nav-menu ul li a {
+    color: var(--text-dark);
+    text-decoration: none;
+    font-weight: 500;
+    padding: 8px 15px;
+    border-radius: var(--border-radius);
+    transition: var(--transition);
+    position: relative;
+}
+
+.nav-menu ul li a:hover {
+    color: var(--primary-color);
+}
+
+.nav-menu ul li a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 2px;
+    background: var(--primary-color);
+    bottom: 0;
+    left: 0;
+    transition: var(--transition);
+}
+
+.nav-menu ul li a:hover::after {
+    width: 100%;
+}
+
+/* Overlay for mobile menu */
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Warna dengan opacity */
+    backdrop-filter: blur(5px); /* Menambahkan efek blur */
+    z-index: 998; /* Di bawah menu, tetapi lebih tinggi dari konten */
+    opacity: 0;
+    visibility: hidden;
+    transition: opacity 0.3s ease, visibility 0s 0.3s; /* Efek transisi */
+}
+
+.overlay.active {
+    opacity: 1;
+    visibility: visible;
+    transition: opacity 0.3s ease; /* Transisi menjadi terlihat */
+}
+
+
+/* Form Styles */
+.registration-form {
+    background: var(--card-bg);
+    padding: 30px;
+    margin: 40px 0;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-color);
+    animation: fadeIn 0.6s ease-out;
+    position: relative;
+    z-index: 1; /* Ensure form stays below mobile menu */
+}
+
+.registration-form h2 {
+    color: var(--primary-color);
+    text-align: center;
+    margin-bottom: 25px;
+    font-size: 2rem;
+    position: relative;
+}
+
+.registration-form {
+    max-width: 700px; /* Ubah sesuai kebutuhan, misalnya 400px atau 360px */
+    margin: 40px auto; /* Tengah dan kasih jarak atas-bawah */
+    padding: 30px;
+    border-radius: var(--border-radius);
+    background: var(--card-bg);
+    box-shadow: var(--box-shadow);
+    border: 1px solid var(--border-color);
+    animation: fadeIn 0.6s ease-out;
+    position: relative;
+    z-index: 1;
+}
+
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+label {
+    display: block;
+    margin-bottom: 8px;
+    color: var(--text-dark);
+    font-weight: 500;
+}
+
+input, select, textarea {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    background: var(--background-dark);
+    color: var(--text-dark);
+    font-size: 1rem;
+    transition: var(--transition);
+}
+
+input:focus, select:focus, textarea:focus {
+    outline: none;
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px rgba(255, 107, 53, 0.2);
+}
+
+textarea {
+    min-height: 120px;
+    resize: vertical;
+}
+
+/* Button Styles */
+.btn {
+    background: var(--gradient-primary);
+    color: white;
+    border: none;
+    padding: 14px 28px;
+    border-radius: var(--border-radius);
+    font-weight: 600;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: var(--transition);
+    box-shadow: 0 4px 12px rgba(255, 107, 53, 0.3);
+    display: block;
+    width: 100%;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 53, 0.4);
+}
+
+/* Footer Styles */
+footer {
+    background: var(--background-light);
+    color: var(--text-dark);
+    text-align: center;
+    padding: 30px 0;
+    margin-top: 60px;
+    border-top: 1px solid var(--border-color);
+    position: relative;
+    z-index: 1;
+}
+
+.copyright {
+    color: var(--text-muted);
+    font-size: 0.9rem;
+}
+
+/* Animations */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Mobile Responsive Styles */
+.menu-toggle {
+    display:         flex;
+    flex-direction:  column;
+    justify-content: space-between;
+    width:           30px;
+    height:          21px;
+    background:      transparent;
+    border:          none;
+    cursor:          pointer;
+    padding:         0;
+    z-index:         1001;
+}
+
+.nav-menu {
+    position:        fixed;
+    top:             0;
+    right:           -100%;
+    width:           280px;
+    height:          100vh;
+    background:      var(--background-light);
+    padding:         100px 30px 30px;
+    box-shadow:      -5px 0 15px rgba(0, 0, 0, 0.1);
+    transition:      var(--transition);
+    flex-direction:  column;
+    z-index:         999; /* Above everything else */
+}
+
+.nav-menu.active {
+    right:           0;
+}
+
+.nav-menu ul {
+    flex-direction:  column;
+    gap:             15px;
+}
+
+.nav-menu ul li a {
+    display:         block;
+    padding:         12px 20px;
+    background:      var(--background-dark);
+}
+
+.registration-form {
+    padding:         25px;
+    margin-top:      20px;
+}
+
+/* Ensure content doesn't show through menu */
+body.menu-open {
+    overflow:        hidden;
+}
+
+
+/* Small Mobile Devices */
+@media (max-width: 480px) {
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .site-title {
+        font-size: 1.3rem;
+    }
+    
+    .registration-form {
+        padding: 20px;
+    }
+    
+    .registration-form h2 {
+        font-size: 1.6rem;
+    }
+    
+    .nav-menu {
+        width: 250px;
+    }
+}

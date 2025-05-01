@@ -1,0 +1,303 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Berita - UKM Panahan ITI</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="berita.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container header-container">
+            <div class="logo">
+                <img src="logo_panahan.jpg" alt="Logo UKM Panahan">
+                <div class="logo-text">
+                    <h1>UKM Panahan</h1>
+                    <p>ITI</p>
+                </div>
+            </div>
+            <nav>
+                <div class="menu-toggle" id="menu-toggle">
+                    <i class="fas fa-bars"></i>
+                </div>
+                <ul id="menu-list">
+                    <li><a href="index.html">Beranda</a></li>
+                    <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                    <li><a href="berita.html" class="active">Berita</a></li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+
+    <!-- News Section -->
+    <section class="news-section">
+        <div class="container">
+
+            
+            <div class="news-filter">
+                <button class="filter-btn active" data-category="all">Semua</button>
+                <button class="filter-btn" data-category="ukm-iti">UKM ITI</button>
+                <button class="filter-btn" data-category="luar-iti">Luar ITI</button>
+            </div>
+            
+            <div class="news-grid">
+                <!-- Berita 1 -->
+                <div class="news-card" data-category="ukm-iti">
+                    <div class="news-img">
+                        <img src="berita1.jpg" alt="Berita 1">
+                        <span class="news-category">UKM ITI</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>UKM Panahan ITI Juara Kompetisi Nasional</h3>
+                        <p class="news-date">12 Oktober 2023</p>
+                        <p>Tim panahan ITI berhasil meraih juara 1 dalam kompetisi nasional yang diadakan di Jakarta. Prestasi ini merupakan yang pertama kali diraih sejak UKM Panahan ITI berdiri 5 tahun lalu.</p>
+                        <a href="berita/detail.html?id=1" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                
+                <!-- Berita 2 -->
+                <div class="news-card" data-category="luar-iti">
+                    <div class="news-img">
+                        <img src="berita2.jpg" alt="Berita 2">
+                        <span class="news-category">Luar ITI</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Teknik Panahan Modern untuk Pemula</h3>
+                        <p class="news-date">5 Oktober 2023</p>
+                        <p>Pelatih nasional membagikan teknik-teknik dasar panahan yang efektif untuk pemula. Teknik ini telah terbukti meningkatkan akurasi hingga 30% dalam waktu 3 bulan latihan.</p>
+                        <a href="berita/detail.html?id=2" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                
+                <!-- Berita 3 -->
+                <div class="news-card" data-category="ukm-iti">
+                    <div class="news-img">
+                        <img src="berita3.jpg" alt="Berita 3">
+                        <span class="news-category">UKM ITI</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Pembukaan Pendaftaran Anggota Baru</h3>
+                        <p class="news-date">1 Oktober 2023</p>
+                        <p>UKM Panahan ITI membuka pendaftaran anggota baru periode Oktober-November 2023. Syarat pendaftaran dan jadwal latihan dapat dilihat di halaman pendaftaran.</p>
+                        <a href="berita/detail.html?id=3" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                
+                <!-- Berita 4 -->
+                <div class="news-card" data-category="luar-iti">
+                    <div class="news-img">
+                        <img src="berita4.jpg" alt="Berita 4">
+                        <span class="news-category">Luar ITI</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Sejarah Panahan di Indonesia</h3>
+                        <p class="news-date">25 September 2023</p>
+                        <p>Panahan memiliki sejarah panjang di Indonesia, mulai dari masa kerajaan hingga olahraga modern. Bagaimana perkembangannya hingga saat ini?</p>
+                        <a href="berita/detail.html?id=4" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                
+                <!-- Berita 5 -->
+                <div class="news-card" data-category="ukm-iti">
+                    <div class="news-img">
+                        <img src="berita5.jpg" alt="Berita 5">
+                        <span class="news-category">UKM ITI</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Pelatihan Rutin Mingguan Dimulai</h3>
+                        <p class="news-date">20 September 2023</p>
+                        <p>Pelatihan rutin UKM Panahan ITI dimulai setiap hari Sabtu pukul 08.00-11.00 di lapangan panahan kampus. Anggota baru wajib mengikuti orientasi terlebih dahulu.</p>
+                        <a href="berita/detail.html?id=5" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </div>
+                
+                <!-- Berita 6 -->
+                <div class="news-card" data-category="luar-iti">
+                    <div class="news-img">
+                        <img src="berita6.jpg" alt="Berita 6">
+                        <span class="news-category">Luar ITI</span>
+                    </div>
+                    <div class="news-content">
+                        <h3>Perkembangan Teknologi Busur Modern</h3>
+                        <p class="news-date">15 September 2023</p>
+                        <p>Material dan desain busur panah terus berkembang. Bagaimana teknologi terbaru memengaruhi performa atlet panahan dunia?</p>
+                        <a href="berita/detail.html?id=6" class="read-more">Baca Selengkapnya</a>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <a href="#" class="page-btn active">1</a>
+                <a href="#" class="page-btn">2</a>
+                <a href="#" class="page-btn">3</a>
+                <a href="#" class="page-btn next">Next &raquo;</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="kontak">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Tentang UKM Panahan</h3>
+                    <p>Unit Kegiatan Mahasiswa Panahan ITI merupakan wadah pengembangan minat dan bakat mahasiswa dalam olahraga panahan.</p>
+                    <div class="social-icons">
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="footer-column">
+                    <h3>Link Cepat</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Beranda</a></li>
+                        <li><a href="pendaftaran.html">Pendaftaran</a></li>
+                        <li><a href="berita.html">Berita</a></li>
+                        <li><a href="#kontak">Kontak</a></li>
+                    </ul>
+                </div>
+                <div class="footer-column">
+                    <h3>Kontak Kami</h3>
+                    <p><i class="fas fa-envelope"></i> ukm.panahan@iti.ac.id</p>
+                    <p><i class="fas fa-phone"></i> (021) 1234-5678</p>
+                    <p><i class="fas fa-map-marker-alt"></i> Gedung UKM, Kampus ITI, Jakarta</p>
+                </div>
+            </div>
+            <div class="copyright">
+                <p>&copy; 2023 UKM Panahan ITI. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script >
+
+document.addEventListener('DOMContentLoaded', function () {
+    const toggle = document.getElementById('menu-toggle');
+    const menu = document.getElementById('menu-list');
+
+    toggle.addEventListener('click', function () {
+        menu.classList.toggle('show');
+    });
+
+    // Skrip filter berita tetap boleh ada di sini
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    const newsCards = document.querySelectorAll('.news-card');
+    const paginationContainer = document.querySelector('.pagination');
+    let itemsPerPage;
+    
+    // Fungsi untuk menentukan jumlah item per halaman berdasarkan ukuran layar
+    function getItemsPerPage() {
+        return window.innerWidth >= 992 ? 4 : 2; // Desktop 4, HP 2
+    }
+    
+    // Fungsi untuk menampilkan halaman tertentu
+    function showPage(page) {
+        itemsPerPage = getItemsPerPage();
+        const startIndex = (page - 1) * itemsPerPage;
+        const endIndex = startIndex + itemsPerPage;
+        
+        newsCards.forEach((card, index) => {
+            card.style.display = (index >= startIndex && index < endIndex) ? 'block' : 'none';
+        });
+        
+        // Update tombol aktif
+        document.querySelectorAll('.page-btn').forEach(btn => {
+            btn.classList.toggle('active', parseInt(btn.textContent) === page);
+        });
+    }
+    
+    // Fungsi untuk membuat tombol pagination
+    function createPagination() {
+        itemsPerPage = getItemsPerPage();
+        const totalPages = Math.ceil(newsCards.length / itemsPerPage);
+        paginationContainer.innerHTML = '';
+        
+        // Buat tombol nomor halaman
+        for (let i = 1; i <= totalPages; i++) {
+            const pageBtn = document.createElement('a');
+            pageBtn.href = '#';
+            pageBtn.className = 'page-btn';
+            pageBtn.textContent = i;
+            pageBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                showPage(i);
+            });
+            paginationContainer.appendChild(pageBtn);
+        }
+        
+        // Tambahkan tombol Next jika diperlukan
+        if (totalPages > 1) {
+            const nextBtn = document.createElement('a');
+            nextBtn.href = '#';
+            nextBtn.className = 'page-btn next';
+            nextBtn.innerHTML = 'Next &raquo;';
+            nextBtn.addEventListener('click', (e) => {
+                e.preventDefault();
+                const activePage = parseInt(document.querySelector('.page-btn.active').textContent);
+                if (activePage < totalPages) showPage(activePage + 1);
+            });
+            paginationContainer.appendChild(nextBtn);
+        }
+    }
+    
+    // Inisialisasi
+    createPagination();
+    showPage(1);
+    
+    // Update saat resize window
+    window.addEventListener('resize', function() {
+        createPagination();
+        showPage(1);
+    });
+    
+    // Filter berita (opsional)
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('active'));
+            button.classList.add('active');
+            
+            const category = button.dataset.category;
+            newsCards.forEach(card => {
+                card.style.display = (category === 'all' || card.dataset.category === category) ? 'block' : 'none';
+            });
+            
+            createPagination();
+            showPage(1);
+        });
+    });
+});
+
+
+    
+    document.addEventListener('DOMContentLoaded', function() {
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const newsCards = document.querySelectorAll('.news-card');
+    
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const category = button.dataset.category;
+                
+                newsCards.forEach(card => {
+                    if (category === 'all' || card.dataset.category === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    });</script>
+</body>
+</html>
